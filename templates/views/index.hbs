@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Homepage</title>
+    <!-- href is relative path -->
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        {{!-- Inject curly braces hbs syntax --}}
+        {{!-- <h1>{{title}}</h1>
+        <p>Created by {{name}} </p> --}}
+        <input placeholder="Location">
+        <form>
+            <button>Search</button>
+        </form>
+
+        <p id="p1"></p>
+        <p id="p2"></p>
+    </div>
+
+    {{>footer}}
+    <script src="/js/app.js"></script>
+
+
+</body>
+
+</html>
