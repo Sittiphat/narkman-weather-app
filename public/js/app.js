@@ -1,12 +1,5 @@
 console.log("Client side Javascript file is loaded");
 
-// Using fetch API
-// then is promises
-fetch("http://puzzle.mead.io/puzzle").then((response) => {
-    response.json().then((data) => {
-        console.log(data);
-    })
-});
 
 // fetch("http://localhost:3000/weather?address=" + location).then((response) => {
 //     response.json().then((data) => {
@@ -38,8 +31,8 @@ weatherForm.addEventListener("submit", (e) => {
             // console.log(data.error)
             messageOne.textContent = data.error 
         } else {
-            messageOne.textContent = data.location
-            messageTwo.textContent = "The temperature is " + data.forecast.temperature + " Fahrenheit."; 
+            messageOne.textContent = `Location Chosen: ${data.location}`; 
+            messageTwo.textContent = "The temperature is " + data.forecast.temperature + "° Fahrenheit."; 
             // console.log(data.location);
             // console.log(data.forecast);
         }
