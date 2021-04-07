@@ -61,3 +61,18 @@ table {
     max-width: 50%;
     height: auto;
 }
+
+.cig-png-med {
+    max-width: 25%;
+    height: auto;
+}
+
+.cig-png-sm {
+    max-width: 10%;
+    height: auto;
+}
+
+.cig-png-xsm {
+    max-width: 5%;
+    height: auto;
+}

@@ -51,19 +51,19 @@ app.get("", (req, res) => {
     res.send("Hello express!");
 });
 
-app.get("/help", (req, res) => {
+app.get("/info", (req, res) => {
     res.render("help.hbs", {
-        title: "Help Page",
+        title: "More Info",
         msg: "Hello there",
         name: "Jesse Narkmanee"
     });
 })
 
-app.get("/help/*", (req, res) => {
+app.get("/info/*", (req, res) => {
   res.render("404.hbs",{
       title: "404 Page",
       name: "Jesse Narkmanee",
-      errorMessage: "Help Article not found!"
+      errorMessage: "More Info Article not found!"
   });
 })
 
@@ -72,7 +72,7 @@ app.get("/help/*", (req, res) => {
 })
 
 app.get("/help", (req, res) => {
-  res.send([{name: "Andrew"}, {name: "Jesse"}]);
+  res.send([{name: "Golf"}, {name: "Jesse"}]);
 });
 
 // Using Handle bars instead of hard coding then using .html
