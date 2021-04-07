@@ -4,6 +4,7 @@ const express = require("express");
 const hbs = require("hbs");
 const geocode = require("./utility/geocode")
 const forecast = require("./utility/forecast")
+const pollution = require("./utility/pollution")
 
 // // Variable that shows path, but we can just use paths
 // console.log(__dirname);
@@ -86,6 +87,17 @@ app.get("/about", (req, res) => {
     res.send("<h1>About<h1>");
 });
 
+// http://api.openweathermap.org/data/2.5/air_pollution?lat=27.2046&lon=77.4977&appid=f2766319db1b425a161fd09bd1549238
+
+// app.get("/pollution", (req, res) => {
+//     if (!req.query.address) {
+//         return res.send({
+//             error: "You must provide a location address"
+//         });
+//     }
+
+// })
+
 app.get("/weather", (req, res) => {
     // Usually we send the HTML title
     if (!req.query.address) {
@@ -99,16 +111,30 @@ app.get("/weather", (req, res) => {
             return res.send({error});
         }
 
+
+
         forecast(latitude, longitude, (error, forecastData) => {
             if (error) {
                 return res.send({error});
             }
 
-            res.send({
-                forecast: forecastData,
-                location,
-                address: req.query.address
-            });
+            // res.send({
+            //     forecast: forecastData,
+            //     location,
+            //     address: req.query.address
+            // });
+            pollution(latitude, longitude, (error, pollutionData) => {
+                if (error) {
+                    return res.send({error});
+                }
+
+                res.send({
+                    forecast: forecastData,
+                    pollution: pollutionData,
+                    location,
+                    address: req.query.address
+                });
+        });
         });
     });
 

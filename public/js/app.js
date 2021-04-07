@@ -13,17 +13,19 @@ console.log("Client side Javascript file is loaded");
 // })
 
 const weatherForm = document.querySelector("form");
-const search = document.querySelector("input")
-const messageOne = document.querySelector("#p1")
-const messageTwo = document.querySelector("#p2")
+const search = document.querySelector("input");
+const messageOne = document.querySelector("#p1");
+const messageTwo = document.querySelector("#p2");
+const messageThree = document.querySelector("#p3");
 
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const location = search.value;
     // console.log(location);
-    messageOne.textContent = "Loading..."
-    messageTwo.textContent = ""
+    messageOne.textContent = "Loading...";
+    messageTwo.textContent = "";
+    messageThree.textContent = "";
 
     fetch("/weather?address=" + location).then((response) => {
     response.json().then((data) => {
@@ -32,7 +34,8 @@ weatherForm.addEventListener("submit", (e) => {
             messageOne.textContent = data.error 
         } else {
             messageOne.textContent = `Location Chosen: ${data.location}`; 
-            messageTwo.textContent = "The temperature is " + data.forecast.temperature + "° Fahrenheit."; 
+            messageTwo.textContent = "The temperature is " + data.forecast.temperature + "°F, " + data.forecast.description + " with " + data.forecast.precipitation + "% chance of rain.";
+            messageThree.textContent = JSON.stringify(data.pollution);
             // console.log(data.location);
             // console.log(data.forecast);
         }
