@@ -78,7 +78,7 @@ app.get("/help", (req, res) => {
 // Using Handle bars instead of hard coding then using .html
 app.get("/about", (req, res) => {
   res.render("about.hbs",{
-      title: "About Weather",
+      title: "About Pollution",
       name: "Jesse Narkmanee"
   });
 });
