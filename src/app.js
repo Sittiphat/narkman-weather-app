@@ -40,7 +40,7 @@ app.use(express.static(publicDirectoryPath));
 app.get("", (req, res) => {
     // Name of the file then all the objects you want view to access
     res.render("index.hbs", {
-        title: "Weather App",
+        title: "Pollution App",
         name: "Jesse Narkmanee"
     });
 });

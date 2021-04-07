@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Help</title>
+    <title>More Info</title>
     <link rel="icon" href="/img/weather.png">
     <!-- href is relative path -->
     <link rel="stylesheet" href="/css/style.css">
@@ -13,8 +13,92 @@
     <div class="main-content">
         {{>header}}
     </div>
-
-
+    
+    <br>
+    <p>Table and Calculations taken directly from this article by UC Berkeley <a href="http://berkeleyearth.org/air-pollution-and-cigarette-equivalence/">here</a></p>
+    <table align="center">
+        <tbody>
+            <tr>
+                <th>Air Pollution Location</th>
+                <th>Equivalent in cigarettes<br />
+                    per day</th>
+            </tr>
+            <tr>
+                <td>US, average</td>
+                <td style="text-align: center;">0.4</td>
+            </tr>
+            <tr>
+                <td>EU, average</td>
+                <td style="text-align: center;">1.6</td>
+            </tr>
+            <tr>
+                <td>China, average</td>
+                <td style="text-align: center;">2.4</td>
+            </tr>
+            <tr>
+                <td>Beijing, average</td>
+                <td style="text-align: center;">4.0</td>
+            </tr>
+            <tr>
+                <td>Handan, average</td>
+                <td style="text-align: center;">5.5</td>
+            </tr>
+            <tr>
+                <td>Beijing, bad day</td>
+                <td style="text-align: center;">25.0</td>
+            </tr>
+            <tr>
+                <td>Harbin, very bad day</td>
+                <td style="text-align: center;">45.0</td>
+            </tr>
+            <tr>
+                <td>Shenyang, worst recorded</td>
+                <td style="text-align: center;">63.0</td>
+            </tr>
+        </tbody>
+    </table>
+    <p><strong>Calculation</strong><br />
+        We start with some numbers estimated by the US Center for Disease Control: 480,000 people die in the US every year
+        due to smoking.<sup>2</sup> The number of cigarettes sold in the US has been dropping, from 470 billion per year in
+        1998, to 280 billion per year in 2013. For the purpose of our rough estimate, we will take an average number of 350
+        billion; it is easy to adjust the numbers using different values.</p>
+    <p>Now we combine these numbers. The ratio of deaths per year, to cigarettes per year, is 0.00000137, expressed in
+        scientific notation as 1.37 x10<sup>-6</sup>. Put another way, there are 1.37 deaths every year for every million
+        cigarettes smoked.</p>
+    <p>Now let’s consider air pollution. The most harmful pollution consists of small particulate matter, 2.5 microns in
+        size or less, called PM<sub>2.5</sub>. These particles are small enough to work their way deep into the lungs and
+        into the bloodstream, where they trigger heart attack, stroke, lung cancer and asthma. In the Berkeley Earth review
+        of deaths in China we showed that 1.6 million people die every year from an average exposure of 52 μg/m<sup>3</sup>
+        of PM<sub>2.5</sub>. To kill 1.6 million people would require, assuming 1.37 x10-6 deaths per cigarette, 1.1
+        trillion cigarettes. Since the population of China is 1.35 billion, that comes to 864 cigarettes every year per
+        person, or about 2.4 cigarettes per day.</p>
+    <p>Thus the average person in China, who typically breathes 52 μg/m<sup>3</sup> of air pollution, is receiving a health
+        impact equivalent to smoking <b>2.4 cigarettes per day</b>. Put another way, 1 cigarette is equivalent to an air pollution
+        of 22 μg/m<sup>3</sup> for one day.</p>
+    <p>The average PM<sub>2.5</sub> in Beijing over the year is about 85 μg/m<sup>3</sup>, equivalent to about 4 cigarettes
+        per day. The average value in the industrial city of Handan, about 200 km south of Beijing, is about 120
+        μg/m<sup>3</sup>, equivalent to 5.5 cigarettes/day. We were in Beijing when the level rose to 550 μg/m<sup>3</sup>,
+        equivalent to 25 cigarettes per day. In Harbin, the air pollution has reached the limit of the scale, 999
+        μg/m<sup>3</sup>. That would be equivalent to 45 cigarettes per day. As we are writing this, the air pollution in
+        New Delhi, India, is 547 μg/m<sup>3</sup>, equivalent to about 25 cigarettes each day. A recent peak reported in the
+        Washington Post for the city of Shenyang<sup>4</sup> set a new record of 1400 μg/m<sup>3</sup>, equivalent to over
+        three packs of cigarettes per day for every man, woman, and child living there.</p>
+    <p><b>Here is the rule of thumb: one cigarette per day is the rough equivalent of a PM<sub>2.5</sub> level of 22
+        μg/m<sup>3</sup></b>. Double that level, and it is equivalent to 2 cigarettes per day. Of course, unlike cigarette
+        smoking, the pollution reaches every age group.</p>
+    <p>The EPA estimates<sup>5</sup> that the average air pollution in the United States in 2013 was 9.0 μg/m<sup>3</sup>.
+        That is equivalent to 0.41 cigarettes per day for every person in the US. From our crude calculation, and taking
+        into account the US population, that average exposure would be expected to lead to 66,000 deaths per year in the US.</p>
+    <p>Europe&#8217;s Environment Commissioner, Janez Potocnik, noted that pollution caused 400,000 premature deaths in 2010
+        in Europe.<sup>7</sup> That’s equivalent, for the EU population of 508 million, to everyone smoking 1.6 cigarettes
+        per day.</p>
+    <p>This sounds bad, but it may be even worse. The US EPA estimates that for every smoking death, there are 30 other
+        people who suffer significant smoking- related health impairment.</p>
+    
+    <p><strong>Learn More</strong></p>
+    <p><a href="http://berkeleyearth.org/air-pollution-and-cigarette-equivalence/">UC Berkeley: Air Pollution and Cigarette Equivalence</a></p>
+    <p><a href="https://www.cnn.com/2019/08/14/health/air-pollution-emphysema-study-climate-scn">CNN: Exposure to polluted air is like smoking a pack a day</a></p>
+    <p><a href="https://www.npr.org/sections/health-shots/2019/08/13/750581235/air-pollution-may-be-as-harmful-to-your-lungs-as-smoking-cigarettes-study-finds">NPR: Air Pollution May Be As Harmful To Your Lungs As Smoking Cigarettes</a></p>
     {{!-- <h1>Help</h1>
         <p>{{msg}}</p>
         <p>{{name}} </p> --}}

@@ -33,9 +33,11 @@ weatherForm.addEventListener("submit", (e) => {
             // console.log(data.error)
             messageOne.textContent = data.error 
         } else {
+            let pm = data.pollution.pm2_5;
+            let pm_day = Math.round(pm/22);
             messageOne.textContent = `Location Chosen: ${data.location}`; 
-            messageTwo.textContent = "The temperature is " + data.forecast.temperature + "°F, " + data.forecast.description + " with " + data.forecast.precipitation + "% chance of rain.";
-            messageThree.textContent = JSON.stringify(data.pollution);
+            messageTwo.textContent = "The temperature is " + data.forecast.temperature + "°F, " + data.forecast.description.toLowerCase() + " with " + data.forecast.precipitation + "% chance of rain.";
+            messageThree.textContent = "Current air quality outside is equivalent to smoking " + pm_day + " cigarettes per day!";
             // console.log(data.location);
             // console.log(data.forecast);
         }

@@ -13,9 +13,9 @@ const pollution = (latitude, longitude, callback) => {
             // console.log("Here is the poll data");
             console.log(response.body.list[0]);
             callback(undefined, {
-                description: response.body.list[0],
-                temperature: response.body.list[0],
-                precipitation: response.body.list[0],
+                aqi: response.body.list[0].main.aqi,
+                components: response.body.list[0].components,
+                pm2_5: response.body.list[0].components.pm2_5,
             });
         }
     });
