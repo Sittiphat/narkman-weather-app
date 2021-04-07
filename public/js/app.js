@@ -38,6 +38,14 @@ weatherForm.addEventListener("submit", (e) => {
             messageOne.textContent = `Location Chosen: ${data.location}`; 
             messageTwo.textContent = "The temperature is " + data.forecast.temperature + "°F, " + data.forecast.description.toLowerCase() + " with " + data.forecast.precipitation + "% chance of rain.";
             messageThree.textContent = "Current air quality outside is equivalent to smoking " + pm_day + " cigarettes per day!";
+            
+
+            for (let i = 0; i < pm_day; i++) {
+                const image = document.createElement("img");
+                image.src = "/img/cig.png";
+                image.classList.add("cig-png");
+                document.querySelector('.container').appendChild(image);
+            }
             // console.log(data.location);
             // console.log(data.forecast);
         }

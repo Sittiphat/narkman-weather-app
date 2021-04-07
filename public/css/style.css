@@ -48,3 +48,16 @@ header a {
   margin-right: auto;
   width: 50%;
 }
+
+th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+.cig-png {
+    max-width: 50%;
+    height: auto;
+}
