@@ -21,17 +21,36 @@ const messageFour = document.querySelector("#p4");
 const messageFive = document.querySelector("#p5");
 const messageSix = document.querySelector("#p6");
 
+function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+
+}
+
+function emoji(pm, i) {
+    let emoji_arr = ['😞', '😣', '😖', '😭'];
+
+    return pm ? emoji_arr[i] : '🥳';
+}
+
 weatherForm.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const location = search.value;
     // console.log(location);
+    // Resetting values
     messageOne.textContent = "Loading...";
     messageTwo.textContent = "";
     messageThree.textContent = "";
     messageFour.textContent = "";
     messageFive.textContent = "";
     messageSix.textContent = "";
+    removeAllChildNodes(document.querySelector('.container'));
+    removeAllChildNodes(document.querySelector('.container2'));
+    removeAllChildNodes(document.querySelector('.container3'));
+    removeAllChildNodes(document.querySelector('.container4'));
+
 
     fetch("/weather?address=" + location).then((response) => {
     response.json().then((data) => {
@@ -49,7 +68,7 @@ weatherForm.addEventListener("submit", (e) => {
             messageTwo.textContent = "The temperature is " + data.forecast.temperature + "°F, " + data.forecast.description.toLowerCase() + " with " + data.forecast.precipitation + "% chance of rain.";
             
             
-            messageThree.textContent = "Current air quality is equivalent to smoking " + pm_day + " cigarettes per day! 😞";
+            messageThree.textContent = "Current air quality is equivalent to smoking " + pm_day + " cigarettes per day! " + emoji(pm_day, 0);
             for (let i = 0; i < pm_day; i++) {
                 const image = document.createElement("img");
                 image.src = "/img/cig.png";
@@ -57,7 +76,7 @@ weatherForm.addEventListener("submit", (e) => {
                 document.querySelector('.container').appendChild(image);
             }
 
-            messageFour.textContent = "Current air quality is equivalent to smoking " + pm_week + " cigarettes per week! 😣";
+            messageFour.textContent = "Current air quality is equivalent to smoking " + pm_week + " cigarettes per week! " + emoji(pm_week, 1);
             for (let i = 0; i < pm_week; i++) {
                 const image = document.createElement("img");
                 image.src = "/img/cig.png";
@@ -65,7 +84,7 @@ weatherForm.addEventListener("submit", (e) => {
                 document.querySelector('.container2').appendChild(image);
             }
 
-            messageFive.textContent = "Current air quality is equivalent to smoking " + pm_month + " cigarettes per month! 😖";
+            messageFive.textContent = "Current air quality is equivalent to smoking " + pm_month + " cigarettes per month! " + emoji(pm_month, 2);
             for (let i = 0; i < pm_month; i++) {
                 const image = document.createElement("img");
                 image.src = "/img/cig.png";
@@ -73,7 +92,7 @@ weatherForm.addEventListener("submit", (e) => {
                 document.querySelector('.container3').appendChild(image);
             }
 
-            messageSix.textContent = "Current air quality is equivalent to smoking " + pm_year + " cigarettes per year! 😭";
+            messageSix.textContent = "Current air quality is equivalent to smoking " + pm_year + " cigarettes per year! " + emoji(pm_year, 3);
             for (let i = 0; i < pm_year; i++) {
                 const image = document.createElement("img");
                 image.src = "/img/cig.png";

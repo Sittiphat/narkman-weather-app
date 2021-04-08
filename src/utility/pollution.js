@@ -11,7 +11,7 @@ const pollution = (latitude, longitude, callback) => {
             callback("Unable to find location!", undefined);
         } else {
             // console.log("Here is the poll data");
-            console.log(response.body.list[0]);
+            // console.log(response.body.list[0]);
             callback(undefined, {
                 aqi: response.body.list[0].main.aqi,
                 components: response.body.list[0].components,
