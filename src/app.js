@@ -102,7 +102,7 @@ app.get("/weather", (req, res) => {
     // Usually we send the HTML title
     if (!req.query.address) {
         return res.send({
-            error: "You must provide weather address"
+            error: "You must provide an address. This can be a full home address, city, or zip code."
         });
     }
 
